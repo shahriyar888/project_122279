@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% block title %}
+        <title>Title</title>
+    {% endblock %}
+    {% block default_css %}
+        <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    {% endblock %}
+</head>
+<body class="cyan lighten-5">
+{% block navbar %}
+{% endblock %}
+{% block base_content %}
+
+{% endblock %}
+{% block footer %}
+    <footer class="page-footer cyan darken-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Owner contact links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">linkdin</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">gmail</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">instagram</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">facebook</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2020 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
+{% endblock%}
+{% block base_script %}
+    <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/default.js' %}"></script>
+
+
+{% endblock %}
+{% block in_page_scripts %}
+{% endblock %}
+</body>
+</html>
