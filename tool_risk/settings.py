@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'materializecssform',
+    'widget_tweaks',
     'risk',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

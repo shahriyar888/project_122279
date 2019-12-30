@@ -1,0 +1,49 @@
+{% extends 'layouts/menus.html' %}
+{% block base_content %}
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Ruls Header</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eum explicabo nemo nobis officia
+                officiis quam reprehenderit soluta ullam? Asperiores, consequatur dolorum ducimus exercitationem harum
+                necessitatibus quo quos ullam. Ad adipisci consequatur delectus dignissimos dolor eaque error eum
+                eveniet ex illo incidunt, ipsum iste laboriosam maiores maxime nesciunt nihil numquam officia possimus
+                quasi quia quidem quos reiciendis rem repudiandae temporibus voluptas! Amet minima quam reiciendis. Amet
+                doloremque eius in laborum molestias quisquam repellat sunt? At culpa dolorem maiores maxime quos rerum
+                voluptates. Aut consectetur consequatur dicta ducimus earum esse eveniet ex ipsum iste itaque nam, quos,
+                soluta unde ut?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="{% url 'unsuccess' %}" class=" waves-effect waves-green btn-flat">dismiss</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+    <div class="container white myContainer">
+
+        <h3>AiTool</h3>
+        <div class="row">
+            <form action="#">
+                <table>
+                    {{ aiform.as_table }}
+                </table>
+                <div style="float: right;">
+                <input type="submit" class="btn">
+                <input type="reset" class="btn">
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block in_page_scripts %}
+    $(document).ready(function(){
+    var instance = $('.modal').modal({
+    dismissible:false,
+    });
+    $('.modal').modal('open')
+
+
+    });
+{% endblock %}
