@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from risk.models import Article
-from .forms import HomeForm, AiToolsForm
+from .forms import HomeForm, AiToolsP1Form,AiToolsP2Form,AiToolsP3Form,AiToolsP4Form
 
 
 class Home(generic.ListView):
@@ -13,7 +13,12 @@ class Home(generic.ListView):
 
 class AiToolsView(generic.TemplateView):
     template_name = 'ai-tools.html'
-    extra_context = {'aiform': AiToolsForm(), }
+    extra_context = {
+        'aiformp1': AiToolsP1Form(),
+        'aiformp2': AiToolsP2Form(),
+        'aiformp3': AiToolsP3Form(),
+        'aiformp4': AiToolsP4Form(),
+    }
 
 
 class ArticleView(generic.TemplateView):

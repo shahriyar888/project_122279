@@ -12,7 +12,7 @@ USER_METHODS_CHOICES = [('A', 'age'), ('H', 'hdl'), ('B', 'bmi'),
 class HomeForm(forms.Form):
     age = forms.IntegerField()
     gender = forms.ChoiceField(widget=forms.RadioSelect, choices=[('M', 'Male'), ('F', 'Female')])
-    deabetes = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES, label='')
+    deabetes = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
     smoker = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
     teat_porhigh = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
     blood_dressure = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
@@ -26,8 +26,17 @@ class HomeForm(forms.Form):
     hdl_cholstorol = forms.FloatField()
 
 
-class AiToolsForm(forms.Form):
+class AiToolsP1Form(forms.Form):
     sample_file = forms.FileField()
-    features = forms.MultipleChoiceField(choices=FEACHER_CHOICES, widget=forms.CheckboxSelectMultiple)
-    famous_method = forms.MultipleChoiceField(choices=FAMOUS_CHOICES, widget=forms.CheckboxSelectMultiple)
-    your_method = forms.MultipleChoiceField(choices=USER_METHODS_CHOICES, widget=forms.CheckboxSelectMultiple)
+
+
+class AiToolsP2Form(forms.Form):
+    features = forms.MultipleChoiceField(choices=FEACHER_CHOICES, widget=forms.CheckboxSelectMultiple,label='')
+
+
+class AiToolsP3Form(forms.Form):
+    famous_method = forms.MultipleChoiceField(choices=FAMOUS_CHOICES, widget=forms.CheckboxSelectMultiple,label='')
+
+
+class AiToolsP4Form(forms.Form):
+    your_method = forms.MultipleChoiceField(choices=USER_METHODS_CHOICES, widget=forms.CheckboxSelectMultiple,label='')

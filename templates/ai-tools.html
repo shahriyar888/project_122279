@@ -23,14 +23,73 @@
 
         <h3>AiTool</h3>
         <div class="row">
-            <form action="#">
-                <table>
-                    {{ aiform.as_table }}
+            <div style="height: 20vh!important;">
+                <table class="col m12 s12">
+                    {{ aiformp1.as_table }}
                 </table>
-                <div style="float: right;">
-                <input type="submit" class="btn">
+                <table class="col m12 s12">
+                    <thead>
+                    <tr>
+                        <th>Famous method</th>
+                        <th>Your method</th>
+                        <th>Automatics</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <form action="#">
+
+                            <td class="" style="width: 30vw">
+                                <p>{{ aiformp2.as_p }}
+                                <div style="height: 100%!important;">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
+                            </td>
+                            </p></td>
+                            <td class="" style="width: 30vw"><p>
+                                {{ aiformp3.as_p }}
+                                <div style="height: 100%!important;">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                </div>
+                            </td>
+                        </form>
+
+                        <td class="" style="width: 30vw"><p>
+                            <form action="#" id="automatics">
+                                {{ aiformp4.as_p }}
+                            </form>
+                            </p>
+                            <button class="btn" id="auto">Auto</button>
+                        </td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float: right;">
+                <input type="submit" value="Computing" class="btn">
                 <input type="reset" class="btn">
-                </div>
+            </div>
+
             </form>
 
         </div>
@@ -38,12 +97,27 @@
 {% endblock %}
 
 {% block in_page_scripts %}
-    $(document).ready(function(){
-    var instance = $('.modal').modal({
-    dismissible:false,
-    });
-    $('.modal').modal('open')
+{#    <script>#}
+        var is_dis = false;
+        $(document).ready(function () {
+            var instance = $('.modal').modal({
+                dismissible: false,
+            });
+            $('.modal').modal('open');
+
+            $('#auto').click(function () {
+                if(is_dis==false){
+                $('#automatics input').prop('disabled', true);
+                is_dis=true;
+                }else{
+                $('#automatics input').prop('disabled', false);
+                is_dis=false;
+    }
+
+            });
+            {#</script>#}
 
 
-    });
+        })
+        ;
 {% endblock %}

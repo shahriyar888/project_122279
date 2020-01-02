@@ -26,3 +26,8 @@ input[type='checkbox']{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+#nav-mobile>li :hover:active {
+    background: white;
+    color: dimgrey;
+}
